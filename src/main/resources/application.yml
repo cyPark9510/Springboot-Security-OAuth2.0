@@ -11,8 +11,8 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/security?serverTimezone=Asia/Seoul
-    username: cos
-    password: cos1234
+    username: pcy
+    password: 1q2w3e4r!
     
   mvc:
     view:
@@ -31,15 +31,15 @@ spring:
       client:
         registration:
           google: # /oauth2/authorization/google 이 주소를 동작하게 한다.
-            client-id: 머시기
-            client-secret: 머시기
+            client-id: 672115222180-tb3nkcha0tar6su4gm88kvg6atqno17t.apps.googleusercontent.com
+            client-secret: naOrwTJdvgYowlAzCZXg18Mn
             scope:
             - email
             - profile
             
           facebook:
-            client-id: 머시기
-            client-secret: 머시기
+            client-id: 143314727623300
+            client-secret: a0b2a28c806ee7131c38f4234943142b
             scope:
             - email
             - public_profile
@@ -47,13 +47,13 @@ spring:
           # 네이버는 OAuth2.0 공식 지원대상이 아니라서 provider 설정이 필요하다.
           # 요청주소도 다르고, 응답 데이터도 다르기 때문이다.
           naver:
-            client-id: 머시기
-            client-secret: 머시기
+            client-id: 5XApr17qcrRfp1UX7DKl
+            client-secret: uzg2DsmvyR
             scope:
             - name
             - email
             - profile_image
-            client-name: Naver # 클라이언트 네임은 구글 페이스북도 대문자로 시작하더라.
+            client-name: Naver
             authorization-grant-type: authorization_code
             redirect-uri: http://localhost:8080/login/oauth2/code/naver
 
