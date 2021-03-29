@@ -27,13 +27,17 @@ public class IndexController {
 
 	@GetMapping({ "", "/" })
 	public @ResponseBody String index() {
+		System.out.println("IndexController/index");
+		
 		return "인덱스 페이지입니다.";
 	}
 
 	@GetMapping("/user")
 	public @ResponseBody String user(@AuthenticationPrincipal PrincipalDetails principal) {
+		System.out.println("IndexController/user");
+		
 		System.out.println("Principal : " + principal);
-		System.out.println("OAuth2 : "+principal.getUser().getProvider());
+		System.out.println("OAuth2 : " + principal.getUser().getProvider());
 		// iterator 순차 출력 해보기
 		Iterator<? extends GrantedAuthority> iter = principal.getAuthorities().iterator();
 		while (iter.hasNext()) {
@@ -46,29 +50,39 @@ public class IndexController {
 
 	@GetMapping("/admin")
 	public @ResponseBody String admin() {
+		System.out.println("IndexController/admin");
+		
 		return "어드민 페이지입니다.";
 	}
-	
-	//@PostAuthorize("hasRole('ROLE_MANAGER')")
-	//@PreAuthorize("hasRole('ROLE_MANAGER')")
+
+	// @PostAuthorize("hasRole('ROLE_MANAGER')")
+	// @PreAuthorize("hasRole('ROLE_MANAGER')")
 	@Secured("ROLE_MANAGER")
 	@GetMapping("/manager")
 	public @ResponseBody String manager() {
+		System.out.println("IndexController/manager");
+		
 		return "매니저 페이지입니다.";
 	}
 
 	@GetMapping("/login")
 	public String login() {
+		System.out.println("IndexController/login");
+		
 		return "login";
 	}
 
 	@GetMapping("/join")
 	public String join() {
+		System.out.println("IndexController/join");
+		
 		return "join";
 	}
 
 	@PostMapping("/joinProc")
 	public String joinProc(User user) {
+		System.out.println("IndexController/joinProc");
+		
 		System.out.println("회원가입 진행 : " + user);
 		String rawPassword = user.getPassword();
 		String encPassword = bCryptPasswordEncoder.encode(rawPassword);

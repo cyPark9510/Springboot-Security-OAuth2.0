@@ -10,20 +10,21 @@ import com.pcy.security.model.User;
 import com.pcy.security.repository.UserRepository;
 
 @Service
-public class PrincipalDetailsService implements UserDetailsService{
+public class PrincipalDetailsService implements UserDetailsService {
 
 	@Autowired
 	private UserRepository userRepository;
-	
+
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		System.out.println("PrincipalDetailsService/loadUserByUsername");
 		User user = userRepository.findByUsername(username);
-		if(user == null) {
+		if (user == null) {
 			return null;
-		}else {
+		} else {
 			return new PrincipalDetails(user);
 		}
-		
+
 	}
 
 }
