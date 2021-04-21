@@ -38,8 +38,8 @@
  - Open Authorization
  - 다양한 플랫폼에서 권한 부여를 위한 산업 표준 프로토콜
 
- 인증 - Authentication : 사용자의 신원을 증명 하는 것
- 인가 - Authorization : 특정 리소스에 접근할 수 있는 권한을 부여 하는 것
+ 인증(Authentication) : 사용자의 신원을 증명 하는 것
+ 인가(Authorization) : 특정 리소스에 접근할 수 있는 권한을 부여 하는 것
 
 ### 1. OAuth 역할
 
